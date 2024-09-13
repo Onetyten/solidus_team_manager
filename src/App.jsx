@@ -1,33 +1,34 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Header from './Header'
+import Footer from './Footer'
+import Employees from './Employees'
+import Sidebar from './Sidebar'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const[openTab, setOpenTab] = useState(true)
+  const[isLeft,setIsLeft] = useState(true)
+
+  function toggleTab(){
+    setOpenTab(!openTab)
+    setIsLeft(!isLeft)
+    
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className='bg-my-grey min-h-screen'>
+      <div className='flex'>
+        <Sidebar toggleTab = {toggleTab} openTab = {openTab} isLeft ={isLeft}/>
+
+        {/* main page */}
+
+        <div className='w-full col-span-3'>
+          <Header/>
+          <Employees/>
+
+        </div>
+
       </div>
-      <h1 className='text-red-600'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </main>
   )
 }
 
