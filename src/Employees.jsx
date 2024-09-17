@@ -41,7 +41,7 @@ import Ravi from './images/Profile/ravi.jpeg'
 
 
 export default function Employees(props) {
-    const{ selectedTeam,setSelectedTeam,setEmployees,employees ,handleSelectedTeam,handleEmployeeCardClicked,teams, setTeams} = props
+    const{ selectedTeam,setSelectedTeam,setEmployees,employees ,handleSelectedTeam,handleEmployeeCardClicked,teams, setTeams,openTab} = props
 
     const employeeImages = {
       1:Todd,
@@ -74,42 +74,13 @@ export default function Employees(props) {
 
     }
 
-
-    // Update teams whenever employees change
-    useEffect(() => {
-      const uniqueTeams = employees
-        .map((employee) => employee.teamName || "Unassigned")
-        .filter((teamName, index, self) => self.indexOf(teamName) === index);
-      setTeams(uniqueTeams);
-    }, [employees]); 
-
-
-    function getUniqueTeams() {
-      const teams = employees
-        .map((employee) => employee.teamName || "Unassigned")
-        .filter((teamName, index, self) => self.indexOf(teamName) === index);
-      return teams;
-    }
-
   
 
     return (
-    <div className='flex flex-col items-center'>
-        <div>
-          <div>
-          <select
-            name="" id="" className='text-xl text-white text-center bg-dark py-2 mb-10 px-10 w-96 rounded-b-xl' value={selectedTeam} onChange={handleSelectedTeam}
-          >
-            {getUniqueTeams().map((team) => (
-              <option key={team} value={team} className='opacity-10'>
-                {team}
-              </option>
-            ))}
-          </select>
-          </div>
-        </div>
+    <div className="flex flex-col items-center mt-40 pl-24">
 
-        <div className='grid md:grid-cols-3 grid-cols-1 p-3 gap-y-7 gap-x-4'>
+
+        <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 p-3 gap-y-7 gap-x-4'>
           {employees.map((employees)=>(
 
             <div key = {employees.id} id={employees.id} className={`flex justify-center bg-dark p-8 rounded-3xl w-full cursor-pointer ${employees.teamName === selectedTeam ? "border-8 border-accent ":"border-none"}`} onClick={handleEmployeeCardClicked}>
@@ -131,7 +102,7 @@ export default function Employees(props) {
                     Designation: <span className='text-white'>{employees.designation}</span> 
                   </p>
                   <p className='mt-2'>
-                    Designation: <span className='text-white'>{employees.teamName || "none"}</span> 
+                    Designation: <span className='text-white'>{employees.teamName || "Unassigned"}</span> 
                   </p>
                 </div>
 

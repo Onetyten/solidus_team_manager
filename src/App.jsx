@@ -6,6 +6,7 @@ import Sidebar from './Sidebar'
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
 import GroupedTeamMembers from './GroupedTeamMembers'
 import NotFound from './NotFound'
+import SelectTeam from './SelectTeam'
 
 
 function App() {
@@ -309,8 +310,11 @@ useEffect(()=>{
         <div className='w-full col-span-3'>
           <Header selectedTeam = {selectedTeam} teamMemberCount ={employees.filter((employees) => employees.teamName === selectedTeam).length}  />
 
+
+        <SelectTeam selectedTeam = {selectedTeam} handleSelectedTeam={handleSelectedTeam} teams={teams}/>
+
           <Routes>
-            <Route path='/' element={<Employees selectedTeam = {selectedTeam} setSelectedTeam={setSelectedTeam} setEmployees={setEmployees} employees = {employees} handleSelectedTeam={handleSelectedTeam} handleEmployeeCardClicked = {handleEmployeeCardClicked} teams={teams} setTeams ={setTeams}/>}>
+            <Route path='/' element={<Employees selectedTeam = {selectedTeam} setSelectedTeam={setSelectedTeam} setEmployees={setEmployees} employees = {employees} handleSelectedTeam={handleSelectedTeam} handleEmployeeCardClicked = {handleEmployeeCardClicked} teams={teams} setTeams ={setTeams} openTab = {openTab}/>}>
   
             </Route>
             <Route path='/GroupedTeamMembers' element={<GroupedTeamMembers employees = {employees} setEmployees ={setEmployees} selectedTeam={selectedTeam} setSelectedTeam = {setSelectedTeam} teams = {teams} setTeams = {setTeams} handleAddTeam = {handleAddTeam} handleRemoveTeam ={handleRemoveTeam}  handleSelectedTeam={handleSelectedTeam}

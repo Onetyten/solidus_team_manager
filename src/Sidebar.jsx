@@ -7,7 +7,13 @@ const{toggleTab,openTab,isLeft} = props
 
 
   return (
-    <div className={`${openTab ?"w-72":"w-24"} bg-dark min-h-screen relative text-white pl-2 pt-20`}>
+    <div className='fixed'>
+      <div className='relative'>
+        {openTab && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm -z-10 w-72"></div>
+        )}
+
+       <div className={`${openTab ?"w-72 bg-[#2a303885]":"w-24 bg-[#2a3038]"}  min-h-screen relative text-white pl-2 pt-20`}>
 
         <i className={`fa-solid ${isLeft ? "fa-circle-left":"fa-circle-right"} absolute right-5 text-4xl top-20 cursor-pointer hover:text-accent`} onClick={toggleTab}></i>
 
@@ -28,10 +34,14 @@ const{toggleTab,openTab,isLeft} = props
             
             
             
-           
+          
             
         </div>
 
+        </div>
+
+      </div>
+   
     </div>
 
 

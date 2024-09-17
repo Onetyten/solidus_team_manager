@@ -33,7 +33,7 @@ export default function GroupedTeamMembers(props) {
 
 
   return (
-    <div>
+    <div className='mt-40'>
          <div className='flex justify-center w-full mt-4'>
         <div className='w-full flex flex-col justify-center items-center'>
 
