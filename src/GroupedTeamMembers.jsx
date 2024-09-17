@@ -28,9 +28,8 @@ export default function GroupedTeamMembers(props) {
 
   useEffect(() => {
     setGroupedEmployees(groupTeamMembers());
-  }, [employees, selectedTeam]);
+  }, [employees, teams, selectedTeam]);
 
-  
 
 
   return (

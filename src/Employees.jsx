@@ -41,7 +41,7 @@ import Ravi from './images/Profile/ravi.jpeg'
 
 
 export default function Employees(props) {
-    const{ selectedTeam,setSelectedTeamset,setEmployees,employees ,handleSelectedTeam,handleEmployeeCardClicked} = props
+    const{ selectedTeam,setSelectedTeam,setEmployees,employees ,handleSelectedTeam,handleEmployeeCardClicked,teams, setTeams} = props
 
     const employeeImages = {
       1:Todd,
@@ -74,7 +74,6 @@ export default function Employees(props) {
 
     }
 
-    const [teams, setTeams] = useState([]);
 
     // Update teams whenever employees change
     useEffect(() => {
@@ -91,17 +90,7 @@ export default function Employees(props) {
         .filter((teamName, index, self) => self.indexOf(teamName) === index);
       return teams;
     }
-    function addEmployee(newEmployee) {
-      setEmployees((prevEmployees) => [...prevEmployees, newEmployee]);
-    }
 
-    function updateTeam(employeeId, newTeam) {
-      setEmployees((prevEmployees) =>
-        prevEmployees.map((employee) =>
-          employee.id === employeeId ? { ...employee, teamName: newTeam } : employee
-        )
-      );
-    }
   
 
     return (

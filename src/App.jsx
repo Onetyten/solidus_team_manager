@@ -20,7 +20,7 @@ function App() {
 
 
   const[selectedTeam,setSelectedTeam] = useState(JSON.parse(localStorage.getItem('SelectedTeam'))||"Team A")
-  const [teams, setTeams] = useState(['Team A', 'Team B', 'Team C', 'Team D']);
+  const [teams, setTeams] = useState(JSON.parse(localStorage.getItem('teamList')) || ['Team A', 'Team B', 'Team C', 'Team D']);
   const [employees, setEmployees] = useState(JSON.parse(localStorage.getItem('employmentList'))||[
     {
       id: 1,
@@ -256,10 +256,12 @@ function App() {
     const handleRemoveTeam = (teamToRemove) => {
       setTeams(teams.filter((team) => team !== teamToRemove));
       
+      
       // Update employees who are part of the removed team to 'Unassigned'
       setEmployees(employees.map(employee => 
         employee.teamName === teamToRemove ? { ...employee, teamName: 'Unassigned' } : employee
       ));
+      console.log(teams)
     };
 
   function handleEmployeeCardClicked(event){
@@ -267,6 +269,17 @@ function App() {
     setEmployees(transformedEmployees)
     console.log(employees.image);
   }
+
+
+
+  // To see the updated list of teams after it changes
+useEffect(() => {
+  console.log(teams); // This will log after the state is updated
+}, [teams]);
+
+
+
+
   useEffect(()=>{
       localStorage.setItem('employmentList',JSON.stringify(employees))
 
@@ -276,6 +289,11 @@ useEffect(()=>{
     localStorage.setItem('SelectedTeam',JSON.stringify(selectedTeam))
 
 },[selectedTeam])
+
+
+useEffect(()=>{
+  localStorage.setItem('teamList',JSON.stringify(teams))
+},[teams])
 
 
 
