@@ -10,7 +10,7 @@ import SelectTeam from './SelectTeam'
 
 
 function App() {
-  const[openTab, setOpenTab] = useState(true)
+  const[openTab, setOpenTab] = useState(false)
   const[isLeft,setIsLeft] = useState(true)
 
   function toggleTab(){
