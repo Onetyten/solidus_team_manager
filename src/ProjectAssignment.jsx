@@ -50,8 +50,8 @@ const handleProjectChange = (
 
 
   return (
-    <div className="flex justify-center items-center w-[99%]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 ml-20 mt-40 gap-5 w-[90%] grid-flow-row-dense">
+    <div className="flex justify-center items-center w-[99%] ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 ml-20 sm:ml-32  mr-4 mt-36 sm:mt-40 gap-5 w-[90%] grid-flow-row-dense">
         <ProjectTag name="Backlog" id="Backlog" projects={projects.filter(project => project.id === "Backlog")} handleProjectChange={handleProjectChange} teams = {teams} selectedTeam ={selectedTeam} setSelectedTeam={setSelectedTeam} />
         <ProjectTag name="Ready" id="Ready" projects={projects.filter(project => project.id === "Ready")} handleProjectChange={handleProjectChange} teams = {teams} selectedTeam ={selectedTeam} setSelectedTeam={setSelectedTeam} />
         <ProjectTag name="In process" id="Inprocess" projects={projects.filter(project => project.id === "Inprocess")} handleProjectChange={handleProjectChange} teams = {teams} selectedTeam ={selectedTeam} setSelectedTeam={setSelectedTeam}/>

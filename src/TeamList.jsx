@@ -2,18 +2,18 @@ import React from 'react';
 
 export default function TeamList({ teams, projects }) {
   return (
-    <div className='mt-40'>
-      <div className='flex justify-center w-full mt-4'>
-        <div className='w-full flex flex-col justify-center items-center'>
+    <div className='mt-28 lg:mt-40 flex'>
+      <div className='flex w-full mt-4'>
+        <div className='w-full flex flex-col justify-end sm:items-center items-end'>
           {teams.map((team) => {
             const teamProjects = projects.filter(
               (project) => project.selectedTeam === team
             );
 
             return (
-              <div key={team} className='cursor-pointer mt-7 bg-dark p-10 w-4/6 rounded-2xl'>
+              <div key={team} className='cursor-pointer mt-7 bg-dark p-10 w-[75%] mr-4 sm:ml-[12%] sm:mr-0 lg:ml-0 lg:mr-0 sm:p-5 sm:w-4/6 rounded-2xl'>
                 <div className='flex items-center justify-between'>
-                  <h4 className='text-accent w-full text-center text-2xl'>
+                  <h4 className='text-accent w-full text-center text-xl'>
                     {team}
                   </h4>
                 </div>

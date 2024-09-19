@@ -41,8 +41,8 @@ export default function ProjectTag(props) {
 
   
   return (
-    <div className="border-2 border-dark p-4 rounded-xl w-full mb-16 bg-dark">
-      <h2 className="text-xl pb-3 text-white">{name}</h2>
+    <div className="border-2 border-dark p-2 sm:p-4 rounded-xl w-full mb-16 bg-dark">
+      <h2 className="text-lg sm:text-xl pb-3 text-white">{name}</h2>
       {projects.map((project) => (
         <ProjectElement key={project.name} project={project} handleProjectChange={handleProjectChange} teams = {teams} selectedTeam= {selectedTeam} setSelectedTeam = {setSelectedTeam} />
       ))}

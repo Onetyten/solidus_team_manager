@@ -41,7 +41,7 @@ export default function ProjectElement(props) {
 
   return (
     <div className="grid w-full border-4 border-white mb-7 pt-4 bg-my-blue rounded-xl gap-7">
-      <div className="flex w-full px-4 justify-between">
+      <div className="flex w-full px-4 justify-between flex-wrap">
         <p>{name}</p>
         <div>
           <select 
@@ -59,11 +59,11 @@ export default function ProjectElement(props) {
         </div>
       </div>
 
-      <div className="flex w-full px-4 justify-between items-center">
+      <div className="flex w-full flex-wrap px-4 justify-between items-center">
         <input
           type="date"
           value={startDate}
-          className="bg-my-grey text-dark p-2 rounded-lg"
+          className="bg-my-grey text-dark p-2 my-5 sm:my-0 rounded-lg"
           readOnly
         />
         <i className="fa-solid fa-arrow-right"></i>
