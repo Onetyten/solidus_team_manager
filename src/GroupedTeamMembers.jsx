@@ -69,8 +69,10 @@ export default function GroupedTeamMembers(props) {
         })}
         </div>
       </div>
+
+      
       <div className='flex flex-col items-center w-full justify-center mt-6'>
-        <i className="fa-solid fa-plus text-5xl  bg-dark text-white p-5 rounded-full hover:text-accent" onClick={toggleShowAdd}></i>
+        <i className={`${showAdd ? "fa-minus" : "fa-plus"} fa-solid text-5xl bg-dark text-white p-5 rounded-full hover:text-accent`} onClick={toggleShowAdd}></i>
         {showAdd&&<div className="mt-6 bg-dark p-8 mb-6 rounded-2xl">
           <input
             type="text"

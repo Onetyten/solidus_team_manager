@@ -25,11 +25,11 @@ const{toggleTab,openTab,isLeft} = props
             <Link to="/GroupedTeamMembers">
               <SidebarWidget openTab = {openTab} name = 'All Members' sec='fa-solid fa-address-card text-2xl sm:text-4xl'/>
             </Link>
-            <Link>
+            <Link to="/ProjectAssignment">
               <SidebarWidget openTab = {openTab} name = 'Project' sec='fa-solid fa-bars-progress text-2xl sm:text-4xl'/>
             </Link>
-            <Link>
-              <SidebarWidget openTab = {openTab} name = 'Chatroom' sec='fa-solid fa-message text-2xl sm:text-4xl'/>
+            <Link to="/TeamList">
+              <SidebarWidget openTab = {openTab} name = 'Workload' sec='fa-solid fa-briefcase text-2xl sm:text-4xl'/>
             </Link>
             
             

@@ -7,6 +7,8 @@ import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
 import GroupedTeamMembers from './GroupedTeamMembers'
 import NotFound from './NotFound'
 import SelectTeam from './SelectTeam'
+import ProjectAssignment from './ProjectAssignment'
+import TeamList from './TeamList'
 
 
 function App() {
@@ -28,14 +30,12 @@ function App() {
       fullName: "Todd Howard",
       designation: "Project Manager",
       gender: "male",
-      image: Todd,
       teamName: "Team A",
     },
     {
       id: 2,
       fullName: "Amanda Lopez",
       designation: "Junior Programmer",
-      image:Todd,
       gender: "female",
       teamName: "Team A",
     },
@@ -43,7 +43,6 @@ function App() {
       id: 3,
       fullName: "Aisha Khan",
       designation: "UX/UI Designer",
-      image:Todd,
       gender: "female",
       teamName: "Team A",
     },
@@ -51,7 +50,6 @@ function App() {
       id: 4,
       fullName: "Olivia Njeri",
       designation: "Software Tester",
-      image:Todd,
       gender: "female",
       teamName: "Team A",
     },
@@ -59,7 +57,6 @@ function App() {
       id: 5,
       fullName: "Santiago Ruiz",
       designation: "IT Support Specialist",
-      image:Todd,
       gender: "male",
       teamName: "Team A",
     },
@@ -67,7 +64,6 @@ function App() {
       id: 6,
       fullName: "Samuel Abimbola",
       designation: "Data Engineer",
-      image:Todd,
       gender: "male",
       teamName: "Team B",
     },
@@ -75,7 +71,6 @@ function App() {
       id: 7,
       fullName: "Mahmoud Hussein",
       designation: "Backend Developer",
-      image:Todd,
       gender: "male",
       teamName: "Team B",
     },
@@ -83,7 +78,6 @@ function App() {
       id: 8,
       fullName: "Luca Ferrari",
       designation: "Junior Programmer",
-      image:Todd,
       gender: "male",
       teamName: "Team B",
     },
@@ -91,7 +85,6 @@ function App() {
       id: 9,
       fullName: "Diego Rodríguez",
       designation: "Database Administrator",
-      image:Todd,
       gender: "male",
       teamName: "Team B",
     },
@@ -99,7 +92,6 @@ function App() {
       id: 10,
       fullName: "Charlotte Dupont",
       designation: "QA Engineer",
-      image:Todd,
       gender: "female",
       teamName: "Team B",
     },
@@ -107,7 +99,6 @@ function App() {
       id: 11,
       fullName: "Arden Cho",
       designation: "Graphic Designer",
-      image:Todd,
       gender: "female",
       teamName: "Team C",
     },
@@ -115,7 +106,6 @@ function App() {
       id: 12,
       fullName: "Sophia Patel",
       designation: "Machine Learning Engineer",
-      image:Todd,
       gender: "female",
       teamName: "Team C",
     },
@@ -123,7 +113,6 @@ function App() {
       id: 13,
       fullName: "Maria Costa",
       designation: "AI Specialist",
-      image:Todd,
       gender: "female",
       teamName: "Team C",
     },
@@ -131,7 +120,6 @@ function App() {
       id: 14,
       fullName: "Fatima Al-Farsi",
       designation: "AI Research Scientist",
-      image:Todd,
       gender: "female",
       teamName: "Team C",
     },
@@ -139,7 +127,6 @@ function App() {
       id: 15,
       fullName: "Chen Wei",
       designation: "Data Analyst",
-      image:Todd,
       gender: "male",
       teamName: "Team C",
     },
@@ -147,7 +134,6 @@ function App() {
       id: 16,
       fullName: "Gail Stillwell",
       designation: "Frontend Developer",
-      image:Todd,
       gender: "male",
       teamName: "Team D",
     },
@@ -155,7 +141,6 @@ function App() {
       id: 17,
       fullName: "Jin Park",
       designation: "Backend Developer",
-      image:Todd,
       gender: "male",
       teamName: "Team D",
     },
@@ -163,7 +148,6 @@ function App() {
       id: 18,
       fullName: "James Li",
       designation: "Scrum Master",
-      image:Todd,
       gender: "male",
       teamName: "Team D",
     },
@@ -171,7 +155,6 @@ function App() {
       id: 19,
       fullName: "Liam Anderson",
       designation: "Game Developer",
-      image:Todd,
       gender: "male",
       teamName: "Team D",
     },
@@ -179,7 +162,6 @@ function App() {
       id: 20,
       fullName: "Nina Petrova",
       designation: "Cybersecurity Analyst",
-      image:Todd,
       gender: "female",
       teamName: "Team D",
     },
@@ -187,7 +169,6 @@ function App() {
       id: 21,
       fullName: "Carlos Mendes",
       designation: "Junior Programmer",
-      image:Todd,
       gender: "male",
       teamName: "Team A",
     },
@@ -195,7 +176,6 @@ function App() {
       id: 22,
       fullName: "Emma Johansson",
       designation: "Cloud Architect",
-      image:Todd,
       gender: "female",
       teamName: "Team B",
     },
@@ -203,7 +183,6 @@ function App() {
       id: 23,
       fullName: "Yuki Tanaka",
       designation: "Web Developer",
-      image:Todd,
       gender: "male",
       teamName: "Team C",
     },
@@ -211,7 +190,6 @@ function App() {
       id: 24,
       fullName: "Kimberly Blake",
       designation: "DevOps Engineer",
-      image:Todd,
       gender: "female",
       teamName: "Team D",
     },
@@ -219,7 +197,6 @@ function App() {
       id: 25,
       fullName: "Ibrahim Hassan",
       designation: "Systems Architect",
-      image:Todd,
       gender: "male",
       teamName: "Team B",
     },
@@ -227,7 +204,6 @@ function App() {
       id: 26,
       fullName: "Isabella Rossi",
       designation: "Junior Programmer",
-      image:Todd,
       gender: "female",
       teamName: "Team A",
     },
@@ -235,11 +211,45 @@ function App() {
       id: 27,
       fullName: "Ravi Sharma",
       designation: "Backend Developer",
-      image:Todd,
       gender: "male",
       teamName: "Team D",
     }
   ]);
+
+
+  const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("Projects")) || [
+    {
+      name: "E-commerce Platform Redesign",
+      id: "Backlog",
+      startDate: new Date().toISOString().split('T')[0],  // Today's date
+      endDate: new Date().toISOString().split('T')[0],  
+      selectedTeam: "Team Alpha"
+    },
+    {
+      name: "Health & Wellness App Development",
+      id: "Done",
+      startDate: new Date().toISOString().split('T')[0],
+      endDate: new Date().toISOString().split('T')[0],  
+      selectedTeam: "Team Bravo"
+    },
+    {
+      name: "Smart Home Automation System",
+      id: "Inprocess",
+      startDate: new Date().toISOString().split('T')[0],
+      endDate: new Date().toISOString().split('T')[0],  
+      selectedTeam: "Team Gamma"
+    },
+    {
+      name: "Blockchain Supply Chain Platform",
+      id: "Ready",
+      startDate: new Date().toISOString().split('T')[0],
+      endDate: new Date().toISOString().split('T')[0],
+      selectedTeam: "Team Delta"
+    },
+  ]);
+
+
+
   
   function handleSelectedTeam(event){
     setSelectedTeam(event.target.value)
@@ -291,6 +301,11 @@ useEffect(()=>{
 
 },[selectedTeam])
 
+useEffect(()=>{
+  localStorage.setItem("Projects",JSON.stringify(projects))
+
+},[projects])
+
 
 useEffect(()=>{
   localStorage.setItem('teamList',JSON.stringify(teams))
@@ -319,6 +334,12 @@ useEffect(()=>{
             </Route>
             <Route path='/GroupedTeamMembers' element={<GroupedTeamMembers employees = {employees} setEmployees ={setEmployees} selectedTeam={selectedTeam} setSelectedTeam = {setSelectedTeam} teams = {teams} setTeams = {setTeams} handleAddTeam = {handleAddTeam} handleRemoveTeam ={handleRemoveTeam}  handleSelectedTeam={handleSelectedTeam}
             handleEmployeeCardClicked={handleEmployeeCardClicked}/>}>
+            </Route>
+
+            <Route path='/ProjectAssignment' element={<ProjectAssignment teams={teams} selectedTeam ={selectedTeam} setSelectedTeam={setSelectedTeam} projects = {projects} setProjects ={setProjects}/>}>
+            </Route>
+
+            <Route path='/TeamList' element={<TeamList teams = {teams} projects = {projects} />}>
             </Route>
                
             <Route path='*' element={<NotFound/>}>

@@ -42,6 +42,7 @@ import Ravi from './images/Profile/ravi.jpeg'
 
 export default function Employees(props) {
     const{ selectedTeam,setSelectedTeam,setEmployees,employees ,handleSelectedTeam,handleEmployeeCardClicked,teams, setTeams,openTab} = props
+    const [showAdd,setShowAdd] = useState(false)
 
     const employeeImages = {
       1:Todd,
@@ -74,6 +75,32 @@ export default function Employees(props) {
 
     }
 
+    function toggleShowAdd(){
+      setShowAdd(!showAdd)
+    }
+
+    const [newEmployeeName, setNewEmployeeName] = useState('');
+    const [newEmployeeDesignation, setNewEmployeeDesignation] = useState('');
+
+    const handleAddEmployee = () => {
+      if (newEmployeeName && newEmployeeDesignation) {
+        const newEmployee = {
+          id: employees.length + 1, // Assuming id is incremental
+          fullName: newEmployeeName,
+          designation: newEmployeeDesignation,
+          teamName: 'Unassigned', // or any default team
+        };
+  
+        setEmployees([...employees, newEmployee]);
+  
+        // Clear input fields
+        setNewEmployeeName('');
+        setNewEmployeeDesignation('');
+        setShowAdd(false); // Optionally close the form after adding
+      }
+    };
+  
+
   
 
     return (
@@ -84,11 +111,6 @@ export default function Employees(props) {
           {employees.map((employees)=>(
 
             <div key = {employees.id} id={employees.id} className={`flex justify-center bg-dark p-8 rounded-3xl w-full cursor-pointer ${employees.teamName === selectedTeam ? "border-8 border-accent ":"border-none"}`} onClick={handleEmployeeCardClicked}>
-
-
-
-
-
               <div className=' border-dark flex flex-col justify-center '>
               <img
                 src={employeeImages[employees.id] || maleProfile} 
@@ -102,7 +124,7 @@ export default function Employees(props) {
                     Designation: <span className='text-white'>{employees.designation}</span> 
                   </p>
                   <p className='mt-2'>
-                    Designation: <span className='text-white'>{employees.teamName || "Unassigned"}</span> 
+                    Team: <span className='text-white'>{employees.teamName || "Unassigned"}</span> 
                   </p>
                 </div>
 
@@ -117,6 +139,37 @@ export default function Employees(props) {
 
 
           )}
+          <div className='flex flex-col items-center w-full justify-center mt-6'>
+            <i 
+              className={`${showAdd ? "fa-minus" : "fa-plus"} fa-solid text-5xl bg-dark text-white p-5 rounded-full hover:text-accent`} 
+              onClick={toggleShowAdd}
+            ></i>
+
+            {showAdd && (
+              <div className="mt-6 bg-dark p-8 mb-6 flex flex-col w-full items-center justify-center rounded-2xl">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="text-black p-4 rounded-md"
+                  value={newEmployeeName}
+                  onChange={(e) => setNewEmployeeName(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder="Designation"
+                  className="text-black p-4 rounded-md mt-4"
+                  value={newEmployeeDesignation}
+                  onChange={(e) => setNewEmployeeDesignation(e.target.value)}
+                />
+                <button
+                  className="mt-4 bg-accent text-white p-4 rounded-md"
+                  onClick={handleAddEmployee}
+                >
+                  Add new Employee
+                </button>
+              </div>
+            )}
+          </div>
 
         </div>
 
