@@ -143,13 +143,13 @@ export default function Employees(props) {
 
 
               <div className="mt-6 bg-dark p-4 sm:p-8 mb-6 flex flex-col w-full items-center justify-center rounded-2xl">
-                <p className='py-4 font-bold text-xl text-my-blue'>
+                <p className='py-4 font-bold text-md sm:text-lg text-my-blue'>
                   Add new employee
                 </p>
                 <input
                   type="text"
                   placeholder="Name"
-                  className="text-black p-2 sm:p-4 rounded-md"
+                  className="text-black text-md p-2 sm:p-4 rounded-md"
                   value={newEmployeeName}
                   onChange={(e) => setNewEmployeeName(e.target.value)}
                 />
@@ -161,7 +161,7 @@ export default function Employees(props) {
                   onChange={(e) => setNewEmployeeDesignation(e.target.value)}
                 />
                 <button
-                  className="mt-4 bg-my-blue text-white p-2 sm:p-4 rounded-md"
+                  className="mt-4 bg-my-blue text-white text-sm sm:text-xl p-2 sm:p-4 rounded-md"
                   onClick={handleAddEmployee}
                 >
                   Add new Employee

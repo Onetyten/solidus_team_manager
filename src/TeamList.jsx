@@ -13,7 +13,7 @@ export default function TeamList({ teams, projects }) {
             return (
               <div key={team} className='cursor-pointer mt-7 bg-dark p-10 w-[75%] mr-4 sm:ml-[12%] sm:mr-0 lg:ml-0 lg:mr-0 sm:p-5 sm:w-4/6 rounded-2xl'>
                 <div className='flex items-center justify-between'>
-                  <h4 className='text-accent w-full text-center text-xl'>
+                  <h4 className='text-accent w-full text-center text-md sm:text-xl'>
                     {team}
                   </h4>
                 </div>
