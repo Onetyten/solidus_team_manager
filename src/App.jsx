@@ -323,7 +323,7 @@ useEffect(()=>{
 
   return (
     <Router className='min-h-screen'>
-      <div className='flex bg-gradient-to-b from-my-grey to-my-blue min-h-screen '>
+      <div className='flex bg-gradient-to-b from-my-grey to-100% to-my-blue min-h-screen '>
 
         <Sidebar toggleTab = {toggleTab} openTab = {openTab} isLeft ={isLeft}/>
 
@@ -332,7 +332,7 @@ useEffect(()=>{
         <div className='w-full col-span-3'>
           <div className='fixed z-10'>
             <div className='flex items-end'>
-             <img src={Logo} alt="" className='rounded-full w-10 h-10 mt-20  lg:mt-0 lg:w-28 lg:h-28' />
+             <img src={Logo} alt="" className='rounded-full w-10 h-10 mt-  lg:mt-0 lg:w-28 lg:h-28' />
              <h2 className='text-accent text-xl lg:text-4xl lg:-translate-x-8'>
               OLIDUS
              </h2>
