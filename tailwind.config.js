@@ -8,10 +8,10 @@ export default {
     extend: {
 
       colors: {
-        'accent': '#ca7869',
-        'dark': '#2a3038',
-        'my-blue': '#9799aa',
-        'my-grey':'#eef0f2'
+        'accent': '#cf89c9',
+        'dark': '#27374D',
+        'my-blue': '#526D82',
+        'my-grey':'#DDE6ED'
       
       },
 

@@ -104,7 +104,7 @@ export default function Employees(props) {
   
 
     return (
-    <div className="flex flex-col items-center mt-32 sm:mt-40 pl-16 sm:pl-24">
+    <div className="flex flex-col items-center mt-32 sm:mt-40 pl-16 sm:pl-24 ">
 
 
         <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 p-3 gap-y-7 gap-x-4'>
@@ -140,13 +140,12 @@ export default function Employees(props) {
 
           )}
           <div className='flex flex-col items-center w-full justify-center mt-6'>
-            <i 
-              className={`${showAdd ? "fa-minus" : "fa-plus"} fa-solid text-xl sm:text-5xl bg-dark text-white p-5 rounded-full hover:text-accent`} 
-              onClick={toggleShowAdd}
-            ></i>
 
-            {showAdd && (
+
               <div className="mt-6 bg-dark p-4 sm:p-8 mb-6 flex flex-col w-full items-center justify-center rounded-2xl">
+                <p className='py-4 font-bold text-xl text-white'>
+                  Add new employee
+                </p>
                 <input
                   type="text"
                   placeholder="Name"
@@ -162,13 +161,13 @@ export default function Employees(props) {
                   onChange={(e) => setNewEmployeeDesignation(e.target.value)}
                 />
                 <button
-                  className="mt-4 bg-accent text-white p-2 sm:p-4 rounded-md"
+                  className="mt-4 bg-my-blue text-white p-2 sm:p-4 rounded-md"
                   onClick={handleAddEmployee}
                 >
                   Add new Employee
                 </button>
               </div>
-            )}
+
           </div>
 
         </div>

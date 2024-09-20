@@ -9,6 +9,7 @@ import NotFound from './NotFound'
 import SelectTeam from './SelectTeam'
 import ProjectAssignment from './ProjectAssignment'
 import TeamList from './TeamList'
+import Logo from './images/Solidus.png'
 
 
 function App() {
@@ -281,6 +282,11 @@ function App() {
     console.log(employees.image);
   }
 
+  const teamMemberCounts = teams.reduce((counts, team) => {
+    counts[team] = employees.filter(employee => employee.teamName === team).length;
+    return counts;
+  }, {});
+
 
 
   // To see the updated list of teams after it changes
@@ -316,17 +322,38 @@ useEffect(()=>{
 
 
   return (
-    <Router className='bg-my-grey min-h-screen'>
-      <div className='flex'>
+    <Router className='min-h-screen'>
+      <div className='flex bg-gradient-to-b from-my-grey to-my-blue min-h-screen '>
+
         <Sidebar toggleTab = {toggleTab} openTab = {openTab} isLeft ={isLeft}/>
 
         {/* main page */}
 
         <div className='w-full col-span-3'>
-          <Header selectedTeam = {selectedTeam} teamMemberCount ={employees.filter((employees) => employees.teamName === selectedTeam).length}  />
+          <div className='fixed z-10'>
+            <div className='flex items-end'>
+             <img src={Logo} alt="" className='rounded-full w-10 h-10 mt-20  lg:mt-0 lg:w-28 lg:h-28' />
+             <h2 className='text-accent text-xl lg:text-4xl lg:-translate-x-8'>
+              OLIDUS
+             </h2>
+            </div>
+            
 
 
-        <SelectTeam selectedTeam = {selectedTeam} handleSelectedTeam={handleSelectedTeam} teams={teams}/>
+          </div>
+
+
+
+
+
+        
+        <SelectTeam selectedTeam = {selectedTeam} handleSelectedTeam={handleSelectedTeam} teams={teams} employees = {employees} teamMemberCounts = {teamMemberCounts} />
+
+ 
+          <Header selectedTeam = {selectedTeam} teamMemberCount ={employees.filter((employees) => employees.teamName === selectedTeam).length}/>
+
+
+
 
           <Routes>
             <Route path='/' element={<Employees selectedTeam = {selectedTeam} setSelectedTeam={setSelectedTeam} setEmployees={setEmployees} employees = {employees} handleSelectedTeam={handleSelectedTeam} handleEmployeeCardClicked = {handleEmployeeCardClicked} teams={teams} setTeams ={setTeams} openTab = {openTab}/>}>

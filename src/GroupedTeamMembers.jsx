@@ -72,8 +72,10 @@ export default function GroupedTeamMembers(props) {
 
       
       <div className='flex flex-col pl-16 items-center w-full justify-center mt-6'>
-        <i className={`${showAdd ? "fa-minus" : "fa-plus"} fa-solid text-xl sm:text-3xl lg:text-5xl bg-dark text-white p-2 sm:p-5 rounded-full hover:text-accent mb-8`} onClick={toggleShowAdd}></i>
-        {showAdd&&<div className="mt-6 bg-dark p-2 sm:p-8 mb-6 rounded-2xl">
+        <div className="mt-6 bg-dark p-2 sm:p-8 mb-6 rounded-2xl py-4">
+          <p className='font-bold my-3 text-my-blue'>
+            Add new team
+          </p>
           <input
             type="text"
             placeholder="Enter new team name"
@@ -83,10 +85,10 @@ export default function GroupedTeamMembers(props) {
           />
           <button
             onClick={() => handleAddTeam(newTeamName)}
-            className="ml-4 bg-accent text-white text-sm sm:text-md px-2 sm:px-4 py-2 rounded-md">
+            className="ml-4 bg-my-blue text-white text-sm sm:text-md px-2 sm:px-4 py-2 rounded-md">
             Add Team
           </button>
-        </div>}
+        </div>
       </div>
     </div>
     

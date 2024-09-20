@@ -3,10 +3,13 @@ import React from 'react'
 export default function Header(props) {
   const{selectedTeam,teamMemberCount} = props
   return (
-    <div className='w-full h-20 bg-dark py-3 fixed '>
-        <h1 className='text-xl sm:text-3xl text-white text-center'>
-           {selectedTeam} has {teamMemberCount} {teamMemberCount ==1?"member":"members"}
-        </h1>
+    <div className='w-full top-[75px] bg-dark py-3 fixed '>
+      <div className='flex justify-center w-full'>
+        <h1 className='text-xl sm:text-xl text-white text-center border-white rounded-lg border-2 w-12'>
+            {teamMemberCount}
+          </h1>
+      </div>
+
     </div>
   )
 }

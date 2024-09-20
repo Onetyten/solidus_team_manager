@@ -4,7 +4,7 @@ export default function TeamList({ teams, projects }) {
   return (
     <div className='mt-28 lg:mt-40 flex'>
       <div className='flex w-full mt-4'>
-        <div className='w-full flex flex-col justify-end sm:items-center items-end'>
+        <div className='w-full flex flex-col justify-end sm:items-center items-end my-8'>
           {teams.map((team) => {
             const teamProjects = projects.filter(
               (project) => project.selectedTeam === team
