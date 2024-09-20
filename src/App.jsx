@@ -337,20 +337,23 @@ useEffect(()=>{
               OLIDUS
              </h2>
             </div>
-            
+          </div>
+          
 
+          <div className='fixed w-full'>
+            <div className='left-0 top-0 flex flex-col bg-dark'>
+              <SelectTeam selectedTeam = {selectedTeam} handleSelectedTeam={handleSelectedTeam} teams={teams} employees = {employees} teamMemberCounts = {teamMemberCounts} />
+              <Header selectedTeam = {selectedTeam} teamMemberCount ={employees.filter((employees) => employees.teamName === selectedTeam).length}/>
+            </div>
+           
 
           </div>
 
+          
 
 
 
 
-        
-        <SelectTeam selectedTeam = {selectedTeam} handleSelectedTeam={handleSelectedTeam} teams={teams} employees = {employees} teamMemberCounts = {teamMemberCounts} />
-
- 
-          <Header selectedTeam = {selectedTeam} teamMemberCount ={employees.filter((employees) => employees.teamName === selectedTeam).length}/>
 
 
 
