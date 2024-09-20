@@ -33,7 +33,7 @@ export default function GroupedTeamMembers(props) {
 
 
   return (
-    <div className='mt-28 sm:mt-40'>
+    <div className='mt-20 sm:mt-40'>
          <div className='flex justify-center w-full mt-4'>
         <div className='w-full flex flex-col justify-center items-end md:items-center sm:mr-[10%] md:ml-[10%] md:mr-0 lg:mr-[5%]'>
 
@@ -72,7 +72,7 @@ export default function GroupedTeamMembers(props) {
 
       
       <div className='flex flex-col pl-16 items-center w-full justify-center mt-6'>
-        <div className="mt-6 bg-dark p-2 sm:p-8 mb-6 rounded-2xl py-4">
+        <div className="mt-6 bg-dark p-2 sm:p-8 mb-6 rounded-2xl py-4 flex flex-col gap-4 items-center justify-center">
           <p className='font-bold my-3 text-my-blue'>
             Add new team
           </p>

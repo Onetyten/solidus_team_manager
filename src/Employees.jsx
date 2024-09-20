@@ -104,7 +104,7 @@ export default function Employees(props) {
   
 
     return (
-    <div className="flex flex-col items-center mt-32 sm:mt-40 pl-16 sm:pl-24 ">
+    <div className="flex flex-col items-center mt-20 sm:mt-40 pl-16 sm:pl-24 ">
 
 
         <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 p-3 gap-y-7 gap-x-4'>
@@ -143,7 +143,7 @@ export default function Employees(props) {
 
 
               <div className="mt-6 bg-dark p-4 sm:p-8 mb-6 flex flex-col w-full items-center justify-center rounded-2xl">
-                <p className='py-4 font-bold text-xl text-white'>
+                <p className='py-4 font-bold text-xl text-my-blue'>
                   Add new employee
                 </p>
                 <input

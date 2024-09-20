@@ -56,7 +56,7 @@ export default function ProjectTag(props) {
         {showAdd && (
           <div className="mt-6 bg-dark p-8 mb-6 flex flex-col w-full items-center justify-center rounded-2xl">
 
-          <div className='flex w-full justify-between mb-10 items-center'>
+          <div className='flex flex-wrap w-full gap-4 justify-center sm:justify-between mb-10 items-center'>
             <input
             type="text"
             placeholder="Project name"
@@ -68,7 +68,7 @@ export default function ProjectTag(props) {
             <div className="flex flex-col justify-center items-center mt-4">
 
 
-              <p className="text-white mb-8">Assign to team:</p>
+              <p className="text-white sm:inline hidden mb-8">Team:</p>
               <select
                 className="bg-my-grey p-2 rounded-lg"
                 value={selectedTeam}
@@ -89,22 +89,22 @@ export default function ProjectTag(props) {
 
 
           
-          <div className="flex w-full justify-between">
+          <div className="flex flex-wrap w-full gap-4 justify-center sm:justify-between">
             <div className="flex flex-col justify-center items-center">
-              <p className="text-white mb-8">Start date:</p>
+              <p className="text-white mb-4 sm:mb-8">Start date:</p>
               <input
                 type="date"
-                className="bg-my-grey text-dark p-2 rounded-lg"
+                className="bg-my-grey text-dark mb-5 p-2 rounded-lg"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
               />
             </div>
         
             <div className="flex flex-col justify-center items-center">
-              <p className="text-white mb-8">End date:</p>
+              <p className="text-white mb-4 sm:mb-8">End date:</p>
               <input
                 type="date"
-                className="bg-my-grey text-dark p-2 rounded-lg"
+                className="bg-my-grey text-dark p-2 mb-5 rounded-lg"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
               />
